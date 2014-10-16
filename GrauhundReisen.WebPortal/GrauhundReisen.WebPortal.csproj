@@ -126,24 +126,6 @@
     <None Include="Content\css\bootstrap-theme.css.map" />
     <None Include="Content\css\bootstrap.css.map" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\GrauhundReisen.Contracts\GrauhundReisen.Contracts.csproj">
-      <Project>{8FEF2173-D048-4846-B423-ECF201CD0845}</Project>
-      <Name>GrauhundReisen.Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GrauhundReisen.Domain\GrauhundReisen.Domain.csproj">
-      <Project>{65BCB66B-65CD-4380-A51C-92524FA4483D}</Project>
-      <Name>GrauhundReisen.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GrauhundReisen.ReadModel\GrauhundReisen.ReadModel.csproj">
-      <Project>{63110AE7-9DF9-4745-8026-2DE15FC064A3}</Project>
-      <Name>GrauhundReisen.ReadModel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Grauhhundreisen.Infrastructure\Grauhundreisen.Infrastructure.csproj">
-      <Project>{2C740D79-9D03-456F-AB57-1FD788884602}</Project>
-      <Name>Grauhundreisen.Infrastructure</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
 </Project>
