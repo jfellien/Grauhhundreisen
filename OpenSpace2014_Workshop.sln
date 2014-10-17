@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
 VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrauhundReisen.WebPortal", "GrauhundReisen.WebPortal\GrauhundReisen.WebPortal.csproj", "{923432BA-6B4D-4EBA-83C7-2B1F94F47DE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrauhundReisen.Domain", "GrauhundReisen.Domain\GrauhundReisen.Domain.csproj", "{D198BFC6-53A2-4C58-A032-187C731675C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,11 +17,15 @@ Global
 		{923432BA-6B4D-4EBA-83C7-2B1F94F47DE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{923432BA-6B4D-4EBA-83C7-2B1F94F47DE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{923432BA-6B4D-4EBA-83C7-2B1F94F47DE7}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = GrauhundReisen.WebPortal\GrauhundReisen.WebPortal.csproj
+		{D198BFC6-53A2-4C58-A032-187C731675C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D198BFC6-53A2-4C58-A032-187C731675C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D198BFC6-53A2-4C58-A032-187C731675C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D198BFC6-53A2-4C58-A032-187C731675C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = GrauhundReisen.WebPortal\GrauhundReisen.WebPortal.csproj
 	EndGlobalSection
 EndGlobal
