@@ -2,14 +2,17 @@
 using Nancy;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using GrauhundReisen.Domain.Services;
 
 namespace GrauhundReisen.WebPortal
 {
 	public class Index : NancyModule
 	{
+		BookingService _bookingService;
 
-		public Index ()
+		public Index (BookingService bookingService)
 		{
+			_bookingService = bookingService;
 
 			Get [""] = _ => ShowBookingForm ();
 
@@ -46,6 +49,11 @@ namespace GrauhundReisen.WebPortal
 			var email = this.Request.Form ["Email"].Value;
 			var firstName = this.Request.Form ["FirstName"].Value;
 			var lastName = this.Request.Form ["LastName"].Value;
+
+			await _bookingService.OrderBooking (bookingId, 
+				destination, 
+				creditCardNumber, creditCardType, 
+				email, firstName, lastName);
 
 			return View ["confirmation", new {BookingId = bookingId}];
 		}

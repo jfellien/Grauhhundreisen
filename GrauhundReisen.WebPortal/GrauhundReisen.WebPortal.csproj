@@ -128,4 +128,14 @@
   </ItemGroup>
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ItemGroup>
+    <ProjectReference Include="..\GrauhundReisen.ReadModel\GrauhundReisen.ReadModel.csproj">
+      <Project>{D119D26D-FB70-4787-A9E0-D8352FB044F5}</Project>
+      <Name>GrauhundReisen.ReadModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GrauhundReisen.Domain\GrauhundReisen.Domain.csproj">
+      <Project>{D198BFC6-53A2-4C58-A032-187C731675C8}</Project>
+      <Name>GrauhundReisen.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
