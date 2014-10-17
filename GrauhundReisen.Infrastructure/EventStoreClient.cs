@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Runtime.Remoting.Messaging;
 using Grauhundreisen.Infrastructure;
+using RestSharp;
 
 namespace GrauhundReisen.Infrastructure
 {
@@ -31,7 +32,7 @@ namespace GrauhundReisen.Infrastructure
     private void InitEventStore()
     {
       var restClient = new RestClient(InitUri.ToString());
-      var request = new RestRequest(Method.Post);
+      var request = new RestRequest(Method.POST);
     }
 
     private void SetUpUris(EventStoreClientConfiguration configuration)
@@ -52,5 +53,10 @@ namespace GrauhundReisen.Infrastructure
         .Add(configuration.RemoveActionName)
         .Add(configuration.AccountId);
     }
+
+    public Uri RemoveUri { get; private set; }
+    public Uri RetrieveUri { get; private set; }
+    public Uri StoreUri { get; private set; }
+    public Uri InitUri { get; private set; }
   }
 }
