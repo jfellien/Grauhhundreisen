@@ -24,12 +24,13 @@ namespace GrauhundReisen.WebPortal
 
 		private static void SetupIoC (TinyIoCContainer container)
 		{
+			var bookingEventHandler = new BookingHandler (ConnectionString);
 			var bookingService = new BookingService ();
-			var bookingHandler = new BookingHandler (ConnectionString);
 
-			bookingService.WhenStatusChanged (bookingHandler.Handle);
+			bookingService.WhenStatusChanged (bookingEventHandler.Handle);
 
 			container.Register (bookingService);
+			container.Register (new Bookings (ConnectionString));
 		}
 	}
 }
