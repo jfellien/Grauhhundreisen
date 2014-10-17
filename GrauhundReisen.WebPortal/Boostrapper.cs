@@ -3,6 +3,7 @@ using Nancy.TinyIoc;
 using System;
 using GrauhundReisen.Domain.Services;
 using Nancy.Bootstrapper;
+using GrauhundReisen.ReadModel.EventHandler;
 
 namespace GrauhundReisen.WebPortal
 {
@@ -24,6 +25,9 @@ namespace GrauhundReisen.WebPortal
 		private static void SetupIoC (TinyIoCContainer container)
 		{
 			var bookingService = new BookingService ();
+			var bookingHandler = new BookingHandler (ConnectionString);
+
+			bookingService.WhenStatusChanged (bookingHandler.Handle);
 
 			container.Register (bookingService);
 		}
