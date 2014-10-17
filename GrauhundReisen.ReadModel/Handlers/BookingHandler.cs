@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
 using GrauhundReisen.Contracts.Events;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace GrauhundReisen.ReadModel
 {

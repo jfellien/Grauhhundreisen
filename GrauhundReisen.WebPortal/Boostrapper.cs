@@ -3,7 +3,7 @@ using Nancy.TinyIoc;
 using System;
 using GrauhundReisen.Domain.Services;
 using Nancy.Bootstrapper;
-using GrauhundReisen.ReadModel.EventHandler;
+using GrauhundReisen.ReadModel;
 
 namespace GrauhundReisen.WebPortal
 {
