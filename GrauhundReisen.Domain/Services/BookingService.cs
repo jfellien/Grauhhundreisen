@@ -1,30 +1,59 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using GrauhundReisen.Domain.Aggregates;
+using Grauhundreisen.Infrastructure;
 
 namespace GrauhundReisen.Domain.Services
 {
-  public class BookingService
-  {
-    public async Task Orderbooking(string bookingId,
-      string destination,
-      string creditCardNumber, string creditCardType,
-      string email, string firstName, string lastName)
-    {
-      var booking = new Booking();
+	public class BookingService
+	{
+		private readonly EventStoreClient _eventStoreClient;
+		private Func<object, Task> _eventHandling;
 
-      booking.Order(bookingId,
-        destination,
-        creditCardNumber, creditCardType,
-        email, firstName, lastName);
+		public BookingService ()
+		{
+			_eventStoreClient = EventStoreClient.InitWith (
+				DomainSettings.DefaultEventStoreCleintConfiguration);
+		}
 
-      await Task.Factory.StartNew(() => 
-        booking.Changes.ToList().ForEach(
-        change =>
-        {
-          _eventStoreClient.Store(bookingId, change);
-          _eventHandling(change);
-        }));
-    }
-  }
+		public void WhenStatusChanged (Func<object, Task> handle)
+		{
+			_eventHandling = handle;
+		}
+
+		public async Task OrderBooking (String bookingId, 
+		                                string destination, 
+		                                string creditCardNumber, string creditCardType, 
+		                                string email, string firstName, string lastName)
+		{
+			// Das aller erste Mal, wenn eine Buchung beauftragt wird, 
+			// hat sie noch keine Events und wird daher initial erzeugt
+			var booking = new Booking ();
+
+			booking.Order (bookingId, 
+				destination, 
+				creditCardNumber, creditCardType, 
+				email, firstName, lastName);
+
+			await Task.Factory.StartNew (() => booking.Changes.ToList ().ForEach (
+				change => {
+					_eventStoreClient.Store (bookingId, change);
+					_eventHandling (change);
+				}));
+		}
+
+		public IEnumerable<object> GetAllEvents ()
+		{
+			return _eventStoreClient.RetrieveAll ();
+		}
+
+		public IEnumerable<String> GetAllEventsAsString ()
+		{
+			return _eventStoreClient.RetrieveAllAsString ();
+		}
+	}
+
+
 }
