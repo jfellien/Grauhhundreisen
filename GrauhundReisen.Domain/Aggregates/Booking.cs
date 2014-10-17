@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using GrauhundReisen.Contracts.Events;
 
 namespace GrauhundReisen.Domain.Aggregates
 {
@@ -25,6 +26,23 @@ namespace GrauhundReisen.Domain.Aggregates
     public IEnumerable<object> Changes
     {
       get { return _changes; }
-    } 
+    }
+
+    public void Order(string bookingId, string destination,
+      string creditCardNumber, string creditCardType,
+      string email, string firstName, string lastName)
+    {
+      var bookingOrdererd = new BookingOrdered
+      {
+        BookingId = bookingId,
+        Destination = destination,
+        CreditCardNumber = creditCardNumber,
+        CreditCardType = creditCardType,
+        Email = email,
+        LastName = lastName
+      };
+
+      _changes.Add(bookingOrdererd);
+    }
   }
 }
