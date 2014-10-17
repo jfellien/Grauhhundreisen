@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrauhundReisen.ReadModel", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrauhundReisen.Contracts", "GrauhundReisen.Contracts\GrauhundReisen.Contracts.csproj", "{EBED4D84-3A23-4511-A88F-5DD047C8F0BA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrauhundReisen.Infrastructure", "GrauhundReisen.Infrastructure\GrauhundReisen.Infrastructure.csproj", "{0141C671-DC30-46F7-A9C0-E8F54ABDFF55}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{EBED4D84-3A23-4511-A88F-5DD047C8F0BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBED4D84-3A23-4511-A88F-5DD047C8F0BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBED4D84-3A23-4511-A88F-5DD047C8F0BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0141C671-DC30-46F7-A9C0-E8F54ABDFF55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0141C671-DC30-46F7-A9C0-E8F54ABDFF55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0141C671-DC30-46F7-A9C0-E8F54ABDFF55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0141C671-DC30-46F7-A9C0-E8F54ABDFF55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
