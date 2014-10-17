@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System.Linq;
+using System.Threading.Tasks;
+using GrauhundReisen.Domain.Aggregates;
 
 namespace GrauhundReisen.Domain.Services
 {
@@ -16,7 +18,8 @@ namespace GrauhundReisen.Domain.Services
         creditCardNumber, creditCardType,
         email, firstName, lastName);
 
-      await Task.Factory.StartNew(() => booking.Changes.ToList().ForEach(
+      await Task.Factory.StartNew(() => 
+        booking.Changes.ToList().ForEach(
         change =>
         {
           _eventStoreClient.Store(bookingId, change);
