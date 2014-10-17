@@ -40,7 +40,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EventBag.cs" />
+    <Compile Include="EventStoreClient.cs" />
     <Compile Include="EventStoreClientConfiguration.cs" />
+    <Compile Include="EventStoreClientException.cs" />
     <Compile Include="ForString.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
