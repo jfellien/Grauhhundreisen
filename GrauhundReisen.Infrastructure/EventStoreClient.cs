@@ -43,6 +43,10 @@ namespace GrauhundReisen.Infrastructure
         .Add(configuration.RetrieveActionName)
         .Add(configuration.AccountId);
 
+      RetrieveUri = ServerUri
+        .Add(configuration.RemoveActionName)
+        .Add(configuration.AccountId);
+
       RemoveUri = ServerUri
         .Add(configuration.RemoveActionName)
         .Add(configuration.AccountId);
