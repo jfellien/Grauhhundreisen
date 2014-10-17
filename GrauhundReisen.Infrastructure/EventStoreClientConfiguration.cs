@@ -1,4 +1,5 @@
 ﻿using System;
+using Grauhundreisen.Infrastructure;
 
 namespace GrauhundReisen.Infrastructure
 {
@@ -22,4 +23,4 @@ namespace GrauhundReisen.Infrastructure
              && AccountId.IsNotNullOrEmpty();
     }
   }
-}
+} 

@@ -43,7 +43,7 @@
     <Compile Include="EventStoreClient.cs" />
     <Compile Include="EventStoreClientConfiguration.cs" />
     <Compile Include="EventStoreClientException.cs" />
-    <Compile Include="ForString.cs" />
+    <Compile Include="EventStoreClientExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

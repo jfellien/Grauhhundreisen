@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.Remoting.Messaging;
+using Grauhundreisen.Infrastructure;
 
 namespace GrauhundReisen.Infrastructure
 {
