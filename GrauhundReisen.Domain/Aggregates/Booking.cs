@@ -18,7 +18,7 @@ namespace GrauhundReisen.Domain.Aggregates
       _changes = new List<object>();
     }
 
-    public Booking(IEnumerable<object> history)
+    protected Booking(IEnumerable<object> history) : this()
     {
       _history = history;
     }
