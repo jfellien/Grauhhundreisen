@@ -40,7 +40,22 @@ namespace GrauhundReisen.Domain.Services
 			await Task.Factory.StartNew (() => booking.Changes.ToList ().ForEach (
 				change => {
 					_eventStoreClient.Store (bookingId, change);
-					_eventHandling (change);
+					//_eventHandling (change);
+				}));
+		}
+
+		public async Task UpdateBookingDetails (String bookingId, String email, String creditCardNumber)
+		{
+			var aggregateEvents = _eventStoreClient.RetrieveFor (bookingId);
+			var booking = Booking.FromEvents (aggregateEvents);
+
+			booking.UpdateEmail (email);
+			booking.UpdateCreditCardNumber (creditCardNumber);
+
+			await Task.Factory.StartNew (() => booking.Changes.ToList ().ForEach (
+				change => {
+					_eventStoreClient.Store (booking.BookingId, change);
+					//_eventHandling (change);
 				}));
 		}
 

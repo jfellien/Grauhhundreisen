@@ -42,6 +42,8 @@
     <Compile Include="Events\BookingOrdered.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ContractTypes.cs" />
+    <Compile Include="Events\BookingEmailChanged.cs" />
+    <Compile Include="Events\BookingCreditCardNumberChanged.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

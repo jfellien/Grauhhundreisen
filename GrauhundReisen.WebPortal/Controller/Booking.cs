@@ -1,12 +1,17 @@
 ﻿using Nancy;
 using System.Threading.Tasks;
+using GrauhundReisen.Domain.Services;
 
 namespace GrauhundReisen.WebPortal
 {
 	public class Booking : NancyModule
 	{
-		public Booking ()
+		BookingService _bookingService;
+
+		public Booking (BookingService bookingService)
 		{
+			_bookingService = bookingService;
+
 			Get ["change-booking/{id}"] = _ => GetBookingFormFor ((string)_.id);
 			Post ["change-booking", true] = async(parameters, cancel) => await UpdateBooking ();
 		}
@@ -27,6 +32,8 @@ namespace GrauhundReisen.WebPortal
 			var bookingId = this.Request.Form ["BookingId"].Value;
 			var email = this.Request.Form ["EMail"].Value;
 			var creditCardNumber = this.Request.Form ["CreditCardNumber"].Value;
+
+			await _bookingService.UpdateBookingDetails (bookingId, email, creditCardNumber);
 
 			return View ["change-confirmation"];
 		}
