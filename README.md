@@ -5,7 +5,7 @@ Eine Beispielapplikation um die Funktionsweise von Event Sourcing zu verdeutlich
 
 
 Die Sourcen haben keinerlei Anspruch auf Vollständigkeit. Es geht ausschließlich darum das Prinzip von EventSourcing zu erklären.
-In den einzelnen Branches befinden sich unterschiedlichen Stände der Entwicklung. 
+In den einzelnen Branches befinden sich die unterschiedlichen Stände der Entwicklung. 
 
 In folgender Reihenfolge sollten die Branches betrachtet werden:
  
