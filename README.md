@@ -18,7 +18,7 @@ In folgender Reihenfolge sollten die Branches betrachtet werden:
  * admin-view
 
 In dieser Reihenfolge lässt sich das Implementieren von EventSourcing in eine Legacy Applikation nachvollziehen. 
-Als ALternative kann man sich auch den `green-field`aus checken und das Implementieren üben.
+Als Alternative kann man sich auch den `green-field`aus checken und das Implementieren üben.
  
 Der Branch `own-coding` wurde von einem Teammitglied für die Teilnahmer gepflegt, damit immer alle den gleichen Stand 
 des Codes haben.
